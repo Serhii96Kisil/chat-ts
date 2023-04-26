@@ -1,1 +1,3 @@
-export function Root() {}
+export function Root() {
+  return null
+}
