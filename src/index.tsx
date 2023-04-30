@@ -1,10 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { Provider as ReduxProvider } from "react-redux"
-
-import store from "./store"
+import { RouterProvider } from "react-router-dom"
 import theme from "./shared/theme"
-import { Root } from "./views"
+
+import routes from "./shared/router"
+import store from "./shared/store"
 
 import reportWebVitals from "./reportWebVitals"
 import { ThemeProvider } from "@mui/material"
@@ -13,9 +14,8 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <Root />
       <ThemeProvider theme={theme}>
-        <Root />
+        <RouterProvider router={routes} />
       </ThemeProvider>
     </ReduxProvider>
   </React.StrictMode>
